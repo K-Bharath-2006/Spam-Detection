@@ -24,11 +24,22 @@ public class SpamService {
     private static final Pattern UPPERCASE_PATTERN = Pattern.compile("[A-Z]");
     private static final Pattern SPECIAL_CHAR_PATTERN = Pattern.compile("[^a-zA-Z0-9\\s]");
     
-    private static final List<String> SPAM_KEYWORDS = List.of(
-            "free", "win", "lottery", "urgent", "click now", "click below",
-            "congratulations", "claim reward", "earn money", "guaranteed", 
-            "cash prize", "act now", "limited time", "special offer",
-            "exclusive", "reward", "investment", "earn", "discount"
+     private static final List<String> SPAM_KEYWORDS = List.of(
+            // Promotional & Offers
+            "free", "win", "lottery", "prize", "jackpot", "giveaway", "bonus",
+            "congratulations", "claim reward", "guaranteed", "cash prize",
+            "special offer", "exclusive", "reward", "discount", "offer",
+            "clearance", "sale", "save big", "100% free", "risk-free", "selected", "winner",
+            // Urgency & Action
+            "urgent", "click now", "click below", "act now", "limited time",
+            "hurry", "expire", "immediately", "last chance", "final notice",
+            "immediate action", "apply now", "call now", "do it today",
+            // Financial & Phishing
+            "earn money", "investment", "earn", "recharge", "suspended",
+            "update kyc", "kyc", "atm card", "bank account", "verify account",
+            "blocked", "account restricted", "password", "credential",
+            "unauthorized", "security alert", "fraud", "tax", "refund",
+            "invoice", "payment", "transaction", "social security", "credit card"
     );
 
     @Transactional
